@@ -457,8 +457,18 @@ var Ticker = function() {
 	Ticker._getTime = function() {
 		return (now&&now.call(performance))||(new Date().getTime());
 	}
-	
-	
+
+	/**
+	 * Halts the timer and prevents future tick events.
+	 * @method halt
+	 * @static
+	 */
+	Ticker.halt = function() {
+		if (Ticker.timeoutID!==null) {
+			clearTimeout(Ticker.timeoutID);
+		}
+	}
+
 	Ticker.init();
 
 createjs.Ticker = Ticker;

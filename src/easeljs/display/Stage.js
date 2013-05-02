@@ -693,5 +693,13 @@ var p = Stage.prototype = new createjs.Container();
 		}
 	}
 
+	/**
+	 * Halts all future tick events.
+	 * @method halt
+	 **/
+	p.halt = function() {
+		createjs.Ticker.halt();
+	}
+
 createjs.Stage = Stage;
 }());
