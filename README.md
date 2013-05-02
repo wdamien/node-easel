@@ -23,6 +23,7 @@ node-easel is completely polymorphic with EaselJS. A good starting point is to c
 ```javascript
 //Import easel
 require('node-easel');
+var Canvas = require('canvas');
 var Stage = createjs.Stage;
 var Shape = createjs.Shape;
 var Graphics = createjs.Graphics;
@@ -45,9 +46,11 @@ g.setStrokeStyle(8)
 
 //Add the item to our stage, and call .tick(); to draw the object.
 var stage = new createjs.Stage(c);
-stage.addChid(shape);
+stage.addChild(shape);
 stage.tick();
 
 //Create a PNG file
-fs.writeFile(__dirname + '/public/circle.png', c.toBuffer());
+fs.writeFile(__dirname + '/public/circle.png', c.toBuffer(), function() {
+    stage.halt();
+});
 ```
