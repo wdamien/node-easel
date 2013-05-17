@@ -26,6 +26,9 @@
 * OTHER DEALINGS IN THE SOFTWARE.
 */
 
+var Canvas = require('canvas');
+var Image = Canvas.Image;
+
 // namespace:
 this.createjs = this.createjs||{};
 
