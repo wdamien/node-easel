@@ -133,3 +133,5 @@ createjs.Ticker.halt = function() {
 		clearTimeout(createjs.Ticker.timeoutID);
 	}
 }
+
+module.exports.createjs = createjs;
